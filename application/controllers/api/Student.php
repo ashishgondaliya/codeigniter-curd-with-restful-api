@@ -41,7 +41,8 @@ class Student extends REST_Controller {
 		}
 		else{
 			$response_array["status"]="error";
-			$this->response($response_array,self::HTTP_NOT_FOUND );		
+			$response_array["msg"]="No record";
+			$this->response($response_array,200 );		
 		}
 		
 	}

@@ -24,18 +24,8 @@ class Student extends CI_Controller {
         
     }
 	public function index()
-	{
-		if(!empty($this->session->flashdata('error'))){
-			$this->data["message"]["error"]=$this->session->flashdata('error');
-		}
-		if(!empty($this->session->flashdata('success'))){
-			$this->data["message"]["success"]=$this->session->flashdata('success');
-		}
-		
-		$this->data["records"]=$this->student_model->getList();
-		// print_f($this->data["records"]);exit;
+	{		
 		$this->load->view('student/student_list',$this->data);
-		
 	}
 	public function create()
 	{
